@@ -1,3 +1,24 @@
+@use './var';
+
 html {
 	font-size: 62.5%; /* 1rem = 10px */
+	font-family: var.$font-family;
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: var.$color-blue-700;
+	color: var.$color-blue-700;
+}
+
+h1 {
+	font-weight: var.$font-weight-bold;
+}
+
+p {
+	font-weight: var.$font-weight-normal;
+}
+
+li::marker {
+	content: url('../../assets/images/icon-list.svg');
 }
