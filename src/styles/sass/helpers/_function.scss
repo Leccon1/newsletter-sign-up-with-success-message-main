@@ -1,0 +1,28 @@
+@use 'sass:math';
+
+// rem() - переводит px в rem (основа 10px = 1rem)
+@function rem($px) {
+	@if math.is-unitless($px) {
+		@return math.div($px, 10) * 1rem;
+	} @else {
+		@error "⚠️ rem() принимает только число без единиц!";
+	}
+}
+
+// em() - переводит px в em (основа 10px = 1em)
+@function em($px) {
+	@if math.is-unitless($px) {
+		@return math.div($px, 10) * 1em;
+	} @else {
+		@error "⚠️ em() принимает только число без единиц!";
+	}
+}
+
+// fluid() - для адаптивной типографики
+@function fluid($minPx, $maxPx, $minVw: 320, $maxVw: 1440) {
+	$minRem: rem($minPx);
+	$maxRem: rem($maxPx);
+	$slope: math.div(($maxPx - $minPx), ($maxVw - $minVw)) * 100;
+	$base: $minPx - $slope * ($minVw / 100);
+	@return clamp(#{$minRem}, #{$base}px + #{$slope}vw, #{$maxRem});
+}
