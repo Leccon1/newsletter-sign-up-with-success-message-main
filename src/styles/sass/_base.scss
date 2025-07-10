@@ -19,6 +19,6 @@ p {
 	font-weight: var.$font-weight-normal;
 }
 
-li::marker {
+ul::marker {
 	content: url('../../assets/images/icon-list.svg');
 }
