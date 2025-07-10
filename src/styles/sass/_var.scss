@@ -1,14 +1,10 @@
 // abstract/_variables.scss
 
 // Цвета
-$color-primary: #0d6efd;
-$color-secondary: #6c757d;
-$color-success: #198754;
-$color-danger: #dc3545;
-$color-warning: #ffc107;
-$color-info: #0dcaf0;
-$color-light: #f8f9fa;
-$color-dark: #212529;
+$color-red: #ff6257;
+$color-blue-800: #242742;
+$color-blue-700: #36384e;
+$color-grey: #949494;
 $color-white: #ffffff;
 $color-black: #000000;
 
@@ -20,6 +16,7 @@ $font-size-lg: 1.25rem;
 
 $font-weight-normal: 400;
 $font-weight-medium: 500;
+$font-weight-semiBold: 600;
 $font-weight-bold: 700;
 
 // Отступы
