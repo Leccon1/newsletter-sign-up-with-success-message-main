@@ -1,0 +1,63 @@
+// abstract/_variables.scss
+
+// Цвета
+$color-primary: #0d6efd;
+$color-secondary: #6c757d;
+$color-success: #198754;
+$color-danger: #dc3545;
+$color-warning: #ffc107;
+$color-info: #0dcaf0;
+$color-light: #f8f9fa;
+$color-dark: #212529;
+$color-white: #ffffff;
+$color-black: #000000;
+
+// Шрифты
+$font-family-base: 'Inter', sans-serif;
+$font-size-base: 1rem;
+$font-size-sm: 0.875rem;
+$font-size-lg: 1.25rem;
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// Отступы
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+
+// Радиусы и бордеры
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 16px;
+
+$border-width: 1px;
+$border-color: #dee2e6;
+
+// Тени
+$box-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+$box-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$box-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
+
+// Брейкпоинты
+$breakpoint-xs: 480px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+
+// Переходы
+$transition-fast: 0.2s ease-in-out;
+$transition-normal: 0.3s ease-in-out;
+
+// Контейнер
+$container-max-width: 1200px;
+
+// Z-индексы
+$z-index-header: 1000;
+$z-index-modal: 1050;
+$z-index-tooltip: 1100;
