@@ -19,6 +19,13 @@ p {
 	font-weight: var.$font-weight-normal;
 }
 
-ul::marker {
+li::marker {
 	content: url('../../assets/images/icon-list.svg');
+}
+
+.page {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
