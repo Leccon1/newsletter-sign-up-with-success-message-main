@@ -1,5 +1,72 @@
 @use '../var';
+@use '../helpers/function' as f;
 
 .card {
+	width: 925px;
+	height: 640px;
+	display: flex;
+	flex-direction: row;
 	background-color: var.$color-white;
+	padding: f.rem(20);
+	border-radius: 30px;
+	font-size: f.fluid(14, 16);
+
+	&__content {
+		padding: f.rem(60);
+
+		&-title {
+			font-size: f.rem(56);
+		}
+
+		&-description {
+			margin: f.rem(20) 0 f.rem(25);
+		}
+
+		&-list {
+			list-style: none;
+			padding-left: 0;
+			margin-bottom: f.rem(45);
+		}
+
+		&-item {
+			position: relative;
+			padding-left: 35px;
+			margin-bottom: 12px;
+			color: #36384d;
+			font-weight: 400;
+
+			&::before {
+				content: url('../../assets/images/icon-list.svg');
+				position: absolute;
+				left: 0;
+				top: 2px;
+			}
+		}
+	}
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+
+	&-label {
+		font-weight: var.$font-weight-bold;
+		font-size: f.rem(12);
+		margin-bottom: f.rem(10);
+	}
+
+	&-input {
+		padding: f.rem(20);
+		border-radius: var.$border-radius-md;
+		border: var.$border-width solid var.$color-grey;
+		margin-bottom: f.rem(25);
+	}
+
+	&-button {
+		font-weight: var.$font-weight-bold;
+		color: var.$color-white;
+		background-color: var.$color-blue-800;
+		border-radius: var.$border-radius-md;
+		padding: f.rem(20);
+	}
 }

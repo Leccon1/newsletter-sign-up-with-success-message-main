@@ -1,6 +1,7 @@
+@charset "UTF-8";
 html {
   font-size: 62.5%; /* 1rem = 10px */
-  font-family: "Roboto";
+  font-family: Roboto;
   scroll-behavior: smooth;
 }
 
@@ -17,10 +18,6 @@ p {
   font-weight: 400;
 }
 
-li::marker {
-  content: url("../../assets/images/icon-list.svg");
-}
-
 .page {
   height: 100vh;
   display: flex;
@@ -30,27 +27,108 @@ li::marker {
 
 @font-face {
   font-family: "Roboto";
-  src: url("../../assets/fonts/Roboto-Regular.ttf") format("ttf");
+  src: url("../../assets/fonts/Roboto-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Roboto";
-  src: url("../../assets/fonts/Roboto-Bold.ttf") format("ttf");
+  src: url("../../assets/fonts/Roboto-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
-html {
-  margin: 0;
+/* Reset and base styles */
+* {
   padding: 0;
+  margin: 0;
+  /* border не рекомендуется сбрасывать глобально */
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-ul {
+/* Links */
+a,
+a:link,
+a:visited,
+a:hover {
+  text-decoration: none;
+  cursor: pointer; /* добавлено для интерактивности */
+}
+
+/* Common */
+aside,
+nav,
+footer,
+header,
+section,
+main {
+  display: block;
+}
+
+ul,
+ol {
   list-style: none;
-  padding: 0;
+}
+
+li {
+  list-style-type: none; /* если нужно убрать маркеры у li */
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Address */
+address {
+  font-style: normal;
+}
+
+/* Form styles */
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent; /* можно оставить или задать по умолчанию */
+}
+
+input::-ms-clear {
+  display: none; /* скрывает крестик в IE/Edge */
+}
+
+button,
+input[type=submit] {
+  display: inline-block; /* можно оставить или использовать inline-flex/inline-grid при необходимости */
+  box-shadow: none; /* убирает тень у кнопок в некоторых браузерах */
+  background: none; /* убирает фон по умолчанию */
+  cursor: pointer; /* добавлено для интерактивности */
+}
+
+input[type=file] {
+  max-width: 100%;
+}
+
+/* Фокус и активное состояние формы */
+input[type=text]:focus,
+textarea[type=text]:focus,
+button[type=button]:focus,
+select:focus {
+  outline: none; /* можно добавить стили фокуса для доступности */
 }
 
 button {
@@ -58,7 +136,64 @@ button {
 }
 
 .card {
+  width: 925px;
+  height: 640px;
+  display: flex;
+  flex-direction: row;
   background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 30px;
+  font-size: clamp(1.4rem, 13.4285714286px + 0.1785714286vw, 1.6rem);
+}
+.card__content {
+  padding: 6rem;
+}
+.card__content-title {
+  font-size: 5.6rem;
+}
+.card__content-description {
+  margin: 2rem 0 2.5rem;
+}
+.card__content-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 4.5rem;
+}
+.card__content-item {
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  color: #36384d;
+  font-weight: 400;
+}
+.card__content-item::before {
+  content: url("../../assets/images/icon-list.svg");
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.form-label {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.form-input {
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #949494;
+  margin-bottom: 2.5rem;
+}
+.form-button {
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #242742;
+  border-radius: 8px;
+  padding: 2rem;
 }
 
 /*# sourceMappingURL=main.css.map */
