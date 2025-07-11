@@ -32,6 +32,21 @@
 	<body>
 		<div class="page">
 			<div class="card">
+				<picture>
+					<source
+						srcset="./src/assets/images/illustration-sign-up-mobile.svg"
+						media="(max-width: 768px)"
+						class="card-img"
+					/>
+					<source
+						srcset="./src/assets/images/illustration-sign-up-tablet.svg"
+						media="(max-width: 1023px)"
+					/>
+					<img
+						src="./src/./assets/images/illustration-sign-up-desktop.svg"
+						alt="illustration"
+					/>
+				</picture>
 				<div class="card__content">
 					<h1 class="card__content-title">Stay updated!</h1>
 					<p class="card__content-description">
@@ -60,10 +75,17 @@
 						</button>
 					</div>
 				</div>
-				<img
-					src="./src/./assets/images/illustration-sign-up-desktop.svg"
-					alt=""
-				/>
+				<!-- <picture>
+					<source
+						srcset="./images/image-product-mobile.jpg"
+						media="(max-width: 660px)"
+					/>
+					<img
+						src="./images/image-product-desktop.jpg"
+						alt="Parfum"
+						class="card__img"
+					/>
+				</picture> -->
 			</div>
 		</div>
 	</body>

@@ -1,31 +1,75 @@
 @use '../var';
 @use '../helpers/function' as f;
+@use '../helpers/media' as *;
 
 .card {
+	position: relative;
 	width: 925px;
 	height: 640px;
 	display: flex;
-	flex-direction: row;
+	flex-direction: row-reverse;
 	background-color: var.$color-white;
 	padding: f.rem(20);
 	border-radius: 30px;
 	font-size: f.fluid(14, 16);
 
+	@include tablet {
+		width: var.$breakpoint-md;
+		height: 500px;
+	}
+
+	@include mobile {
+		width: 375px;
+		height: 800px;
+		flex-direction: column;
+		padding: 0;
+		border-radius: 0;
+	}
+
 	&__content {
 		padding: f.rem(60);
 
+		@include tablet {
+			padding: f.rem(40);
+		}
+
+		@include mobile {
+			margin-top: f.rem(30);
+			padding: 0 f.rem(27);
+		}
+
 		&-title {
-			font-size: f.fluid(56, 34);
+			font-size: f.fluid(38, 56);
+
+			@include mobile {
+				font-size: f.rem(38);
+			}
 		}
 
 		&-description {
 			margin: f.rem(20) 0 f.rem(25);
+
+			@include tablet {
+				margin: f.rem(40) 0;
+			}
+
+			@include mobile {
+				margin: f.rem(20) 0 f.rem(25);
+			}
 		}
 
 		&-list {
 			list-style: none;
 			padding-left: 0;
 			margin-bottom: f.rem(45);
+
+			@include tablet {
+				margin: f.rem(45) 0;
+			}
+
+			@include mobile {
+				margin: f.rem(20) 0 f.rem(45);
+			}
 		}
 
 		&-item {
@@ -33,7 +77,11 @@
 			padding-left: 35px;
 			margin-bottom: 12px;
 			color: #36384d;
-			font-weight: 400;
+			font-weight: var.$font-weight-medium;
+
+			@include tablet {
+				margin-bottom: 20px;
+			}
 
 			&::before {
 				content: url('../../assets/images/icon-list.svg');
@@ -43,11 +91,26 @@
 			}
 		}
 	}
+	&-img {
+		width: 100%;
+	}
 }
 
 .form {
 	display: flex;
 	flex-direction: column;
+
+	@include tablet {
+		position: absolute;
+		right: 70px;
+		bottom: 40px;
+	}
+
+	@include mobile {
+		position: relative;
+		right: 0;
+		bottom: 0;
+	}
 
 	&-label {
 		font-weight: var.$font-weight-bold;
@@ -75,11 +138,22 @@
 		background-color: var.$color-blue-800;
 		border-radius: var.$border-radius-md;
 		padding: f.rem(20);
-		transition: all var.$transition-normal;
+		transition: background-color var.$transition-normal,
+			transform var.$transition-normal;
 
-		&:hover {
-			background-color: var.$color-red;
-			box-shadow: 0 12px 40px rgb(255, 98, 87, 0.5);
+		@include laptop-above {
+			&:hover {
+				background-color: var.$color-red;
+				box-shadow: 0 12px 40px rgb(255, 98, 87, 0.5);
+			}
+		}
+
+		@include mobile {
+			&:active {
+				background-color: var.$color-red;
+				box-shadow: 0 12px 40px rgb(255, 98, 87, 0.5);
+				transform: scale(0.99);
+			}
 		}
 	}
 }

@@ -1,5 +1,6 @@
 @use './var';
 @use './helpers/function' as f;
+@use './helpers/media' as *;
 
 html {
 	font-size: 62.5%; /* 1rem = 10px */
@@ -25,4 +26,8 @@ p {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	@include mobile {
+		align-items: start;
+	}
 }
