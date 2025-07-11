@@ -149,7 +149,7 @@ button {
   padding: 6rem;
 }
 .card__content-title {
-  font-size: 5.6rem;
+  font-size: clamp(5.6rem, 62.2857142857px + -1.9642857143vw, 3.4rem);
 }
 .card__content-description {
   margin: 2rem 0 2.5rem;
@@ -187,6 +187,11 @@ button {
   border-radius: 8px;
   border: 1px solid #949494;
   margin-bottom: 2.5rem;
+  transition: border 0.2s ease-in-out;
+}
+.form-input:hover, .form-input:focus {
+  border-color: #242742;
+  outline: none;
 }
 .form-button {
   font-weight: 700;
@@ -194,6 +199,11 @@ button {
   background-color: #242742;
   border-radius: 8px;
   padding: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+.form-button:hover {
+  background-color: #ff6257;
+  box-shadow: 0 12px 40px rgba(255, 98, 87, 0.5);
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -15,7 +15,7 @@
 		padding: f.rem(60);
 
 		&-title {
-			font-size: f.rem(56);
+			font-size: f.fluid(56, 34);
 		}
 
 		&-description {
@@ -60,6 +60,13 @@
 		border-radius: var.$border-radius-md;
 		border: var.$border-width solid var.$color-grey;
 		margin-bottom: f.rem(25);
+		transition: border var.$transition-fast;
+
+		&:hover,
+		&:focus {
+			border-color: var.$color-blue-800;
+			outline: none;
+		}
 	}
 
 	&-button {
@@ -68,5 +75,11 @@
 		background-color: var.$color-blue-800;
 		border-radius: var.$border-radius-md;
 		padding: f.rem(20);
+		transition: all var.$transition-normal;
+
+		&:hover {
+			background-color: var.$color-red;
+			box-shadow: 0 12px 40px rgb(255, 98, 87, 0.5);
+		}
 	}
 }
