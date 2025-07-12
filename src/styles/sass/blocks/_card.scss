@@ -98,6 +98,7 @@
 }
 
 .form {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 
@@ -117,6 +118,15 @@
 		font-weight: var.$font-weight-bold;
 		font-size: f.rem(12);
 		margin-bottom: f.rem(10);
+
+		&-error {
+			display: none;
+			position: absolute;
+			right: 0;
+			top: 0;
+			color: var.$color-red;
+			font-size: f.rem(12);
+		}
 	}
 
 	&-input {
@@ -130,6 +140,12 @@
 		&:focus {
 			border-color: var.$color-blue-800;
 			outline: none;
+		}
+
+		&.error {
+			border: 1px solid red;
+			background-color: #ffe8e8;
+			color: red;
 		}
 	}
 

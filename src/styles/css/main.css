@@ -243,6 +243,7 @@ button {
 }
 
 .form {
+  position: relative;
   display: flex;
   flex-direction: column;
 }
@@ -265,6 +266,14 @@ button {
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
+.form-label-error {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #ff6257;
+  font-size: 1.2rem;
+}
 .form-input {
   padding: 2rem;
   border-radius: 8px;
@@ -275,6 +284,11 @@ button {
 .form-input:hover, .form-input:focus {
   border-color: #242742;
   outline: none;
+}
+.form-input.error {
+  border: 1px solid red;
+  background-color: #ffe8e8;
+  color: red;
 }
 .form-button {
   font-weight: 700;
