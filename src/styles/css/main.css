@@ -298,4 +298,46 @@ button {
   }
 }
 
+.card-success {
+  display: none;
+  width: 460px;
+  background-color: #ffffff;
+  padding: 4.5rem;
+  border-radius: 30px;
+  font-size: clamp(1.4rem, 13.5327102804px + 0.1246105919vw, 1.6rem);
+}
+.card-success__content-img {
+  transform: scale(2);
+  margin: 1rem 0 3rem 1rem;
+}
+.card-success__content-title {
+  margin: 1.5rem;
+}
+.card-success__content-description--email {
+  font-weight: 700;
+}
+.card-success__content-button {
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #242742;
+  border-radius: 8px;
+  padding: 2rem;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  width: 100%;
+  margin-top: 4rem;
+}
+@media (width > 1440.98px) {
+  .card-success__content-button:hover {
+    background-color: #ff6257;
+    box-shadow: 0 12px 40px rgba(255, 98, 87, 0.5);
+  }
+}
+@media (width <= 767.98px) {
+  .card-success__content-button:active {
+    background-color: #ff6257;
+    box-shadow: 0 12px 40px rgba(255, 98, 87, 0.5);
+    transform: scale(0.99);
+  }
+}
+
 /*# sourceMappingURL=main.css.map */

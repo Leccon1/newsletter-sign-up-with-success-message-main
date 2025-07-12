@@ -1,0 +1,37 @@
+@use '../var';
+@use '../helpers/function' as f;
+@use '../helpers/media' as *;
+@use '../helpers/mixins' as *;
+
+.card-success {
+	display: none;
+	width: 460px;
+	background-color: var.$color-white;
+	padding: f.rem(45);
+	border-radius: 30px;
+	font-size: f.fluid(14, 16);
+
+	&__content {
+		&-img {
+			transform: scale(2);
+			margin: f.rem(10) 0 f.rem(30) f.rem(10);
+		}
+
+		&-title {
+			margin: f.rem(15);
+		}
+
+		&-description {
+			&--email {
+				font-weight: var.$font-weight-bold;
+			}
+		}
+
+		&-button {
+			@include button;
+
+			width: 100%;
+			margin-top: f.rem(40);
+		}
+	}
+}
