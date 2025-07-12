@@ -1,0 +1,139 @@
+@use '../var';
+@use '../helpers/function' as f;
+@use '../helpers/media' as *;
+@use '../helpers/mixins' as *;
+
+.card {
+	position: relative;
+	width: 925px;
+	height: 640px;
+	display: flex;
+	flex-direction: row-reverse;
+	background-color: var.$color-white;
+	padding: f.rem(20);
+	border-radius: 30px;
+	font-size: f.fluid(14, 16);
+
+	@include tablet {
+		width: var.$breakpoint-md;
+		height: 500px;
+	}
+
+	@include mobile {
+		width: 375px;
+		height: 800px;
+		flex-direction: column;
+		padding: 0;
+		border-radius: 0;
+	}
+
+	&__content {
+		padding: f.rem(60);
+
+		@include tablet {
+			padding: f.rem(40);
+		}
+
+		@include mobile {
+			margin-top: f.rem(30);
+			padding: 0 f.rem(27);
+		}
+
+		&-title {
+			font-size: f.fluid(38, 56);
+
+			@include mobile {
+				font-size: f.rem(38);
+			}
+		}
+
+		&-description {
+			margin: f.rem(20) 0 f.rem(25);
+
+			@include tablet {
+				margin: f.rem(40) 0;
+			}
+
+			@include mobile {
+				margin: f.rem(20) 0 f.rem(25);
+			}
+		}
+
+		&-list {
+			list-style: none;
+			padding-left: 0;
+			margin-bottom: f.rem(45);
+
+			@include tablet {
+				margin: f.rem(45) 0;
+			}
+
+			@include mobile {
+				margin: f.rem(20) 0 f.rem(45);
+			}
+		}
+
+		&-item {
+			position: relative;
+			padding-left: 35px;
+			margin-bottom: 12px;
+			color: #36384d;
+			font-weight: var.$font-weight-medium;
+
+			@include tablet {
+				margin-bottom: 20px;
+			}
+
+			&::before {
+				content: url('../../assets/images/icon-list.svg');
+				position: absolute;
+				left: 0;
+				top: 2px;
+			}
+		}
+	}
+	&-img {
+		width: 100%;
+	}
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+
+	@include tablet {
+		position: absolute;
+		right: 70px;
+		bottom: 40px;
+	}
+
+	@include mobile {
+		position: relative;
+		right: 0;
+		bottom: 0;
+	}
+
+	&-label {
+		font-weight: var.$font-weight-bold;
+		font-size: f.rem(12);
+		margin-bottom: f.rem(10);
+	}
+
+	&-input {
+		padding: f.rem(20);
+		border-radius: var.$border-radius-md;
+		border: var.$border-width solid var.$color-grey;
+		margin-bottom: f.rem(25);
+		transition: border var.$transition-fast;
+
+		&:hover,
+		&:focus {
+			border-color: var.$color-blue-800;
+			outline: none;
+		}
+	}
+
+	&-button {
+		@include button;
+	}
+}

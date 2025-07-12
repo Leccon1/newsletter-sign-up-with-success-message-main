@@ -1,6 +1,7 @@
+@charset "UTF-8";
 html {
   font-size: 62.5%; /* 1rem = 10px */
-  font-family: "Roboto";
+  font-family: Roboto;
   scroll-behavior: smooth;
 }
 
@@ -17,37 +18,284 @@ p {
   font-weight: 400;
 }
 
-li::marker {
-  content: url("../../assets/images/icon-list.svg");
+.page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (width <= 767.98px) {
+  .page {
+    align-items: start;
+  }
 }
 
 @font-face {
   font-family: "Roboto";
-  src: url("../../assets/fonts/Roboto-Regular.ttf") format("ttf");
+  src: url("../../assets/fonts/Roboto-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Roboto";
-  src: url("../../assets/fonts/Roboto-Bold.ttf") format("ttf");
+  src: url("../../assets/fonts/Roboto-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
-html {
-  margin: 0;
+/* Reset and base styles */
+* {
   padding: 0;
+  margin: 0;
+  /* border не рекомендуется сбрасывать глобально */
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-li {
+/* Links */
+a,
+a:link,
+a:visited,
+a:hover {
+  text-decoration: none;
+  cursor: pointer; /* добавлено для интерактивности */
+}
+
+/* Common */
+aside,
+nav,
+footer,
+header,
+section,
+main {
+  display: block;
+}
+
+ul,
+ol {
   list-style: none;
-  padding: 0;
+}
+
+li {
+  list-style-type: none; /* если нужно убрать маркеры у li */
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Address */
+address {
+  font-style: normal;
+}
+
+/* Form styles */
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent; /* можно оставить или задать по умолчанию */
+}
+
+input::-ms-clear {
+  display: none; /* скрывает крестик в IE/Edge */
+}
+
+button,
+input[type=submit] {
+  display: inline-block; /* можно оставить или использовать inline-flex/inline-grid при необходимости */
+  box-shadow: none; /* убирает тень у кнопок в некоторых браузерах */
+  background: none; /* убирает фон по умолчанию */
+  cursor: pointer; /* добавлено для интерактивности */
+}
+
+input[type=file] {
+  max-width: 100%;
+}
+
+/* Фокус и активное состояние формы */
+input[type=text]:focus,
+textarea[type=text]:focus,
+button[type=button]:focus,
+select:focus {
+  outline: none; /* можно добавить стили фокуса для доступности */
 }
 
 button {
   border: none;
+}
+
+.title {
+  font-size: clamp(3.8rem, 33.7943925234px + 1.1214953271vw, 5.6rem);
+}
+
+.card {
+  position: relative;
+  width: 925px;
+  height: 640px;
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 30px;
+  font-size: clamp(1.4rem, 13.5327102804px + 0.1246105919vw, 1.6rem);
+}
+@media (width <= 1023.98px) {
+  .card {
+    width: 768px;
+    height: 500px;
+  }
+}
+@media (width <= 767.98px) {
+  .card {
+    width: 375px;
+    height: 800px;
+    flex-direction: column;
+    padding: 0;
+    border-radius: 0;
+  }
+}
+.card__content {
+  padding: 6rem;
+}
+@media (width <= 1023.98px) {
+  .card__content {
+    padding: 4rem;
+  }
+}
+@media (width <= 767.98px) {
+  .card__content {
+    margin-top: 3rem;
+    padding: 0 2.7rem;
+  }
+}
+.card__content-title {
+  font-size: clamp(3.8rem, 33.7943925234px + 1.1214953271vw, 5.6rem);
+}
+@media (width <= 767.98px) {
+  .card__content-title {
+    font-size: 3.8rem;
+  }
+}
+.card__content-description {
+  margin: 2rem 0 2.5rem;
+}
+@media (width <= 1023.98px) {
+  .card__content-description {
+    margin: 4rem 0;
+  }
+}
+@media (width <= 767.98px) {
+  .card__content-description {
+    margin: 2rem 0 2.5rem;
+  }
+}
+.card__content-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 4.5rem;
+}
+@media (width <= 1023.98px) {
+  .card__content-list {
+    margin: 4.5rem 0;
+  }
+}
+@media (width <= 767.98px) {
+  .card__content-list {
+    margin: 2rem 0 4.5rem;
+  }
+}
+.card__content-item {
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  color: #36384d;
+  font-weight: 500;
+}
+@media (width <= 1023.98px) {
+  .card__content-item {
+    margin-bottom: 20px;
+  }
+}
+.card__content-item::before {
+  content: url("../../assets/images/icon-list.svg");
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+.card-img {
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+@media (width <= 1023.98px) {
+  .form {
+    position: absolute;
+    right: 70px;
+    bottom: 40px;
+  }
+}
+@media (width <= 767.98px) {
+  .form {
+    position: relative;
+    right: 0;
+    bottom: 0;
+  }
+}
+.form-label {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.form-input {
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #949494;
+  margin-bottom: 2.5rem;
+  transition: border 0.2s ease-in-out;
+}
+.form-input:hover, .form-input:focus {
+  border-color: #242742;
+  outline: none;
+}
+.form-button {
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #242742;
+  border-radius: 8px;
+  padding: 2rem;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+@media (width > 1440.98px) {
+  .form-button:hover {
+    background-color: #ff6257;
+    box-shadow: 0 12px 40px rgba(255, 98, 87, 0.5);
+  }
+}
+@media (width <= 767.98px) {
+  .form-button:active {
+    background-color: #ff6257;
+    box-shadow: 0 12px 40px rgba(255, 98, 87, 0.5);
+    transform: scale(0.99);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

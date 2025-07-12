@@ -19,7 +19,7 @@
 }
 
 // fluid() - для адаптивной типографики
-@function fluid($minPx, $maxPx, $minVw: 320, $maxVw: 1440) {
+@function fluid($minPx, $maxPx, $minVw: 375, $maxVw: 1980) {
 	$minRem: rem($minPx);
 	$maxRem: rem($maxPx);
 	$slope: math.div(($maxPx - $minPx), ($maxVw - $minVw)) * 100;

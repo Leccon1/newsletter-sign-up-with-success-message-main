@@ -9,7 +9,7 @@ $color-white: #ffffff;
 $color-black: #000000;
 
 // Шрифты
-$font-family: 'Roboto';
+$font-family: Roboto;
 $font-family-base: 'Inter', sans-serif;
 $font-size-base: 1rem;
 $font-size-sm: 0.875rem;
@@ -33,6 +33,7 @@ $border-radius-md: 8px;
 $border-radius-lg: 16px;
 
 $border-width: 1px;
+$border-width-hover: 2px;
 $border-color: #dee2e6;
 
 // Тени
