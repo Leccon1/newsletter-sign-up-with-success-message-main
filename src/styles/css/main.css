@@ -267,19 +267,20 @@ button {
   margin-bottom: 1rem;
 }
 .form-label-error {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
   position: absolute;
   right: 0;
   top: 0;
   color: #ff6257;
   font-size: 1.2rem;
+  transition: all 0.2s ease-in-out;
 }
 .form-input {
   padding: 2rem;
   border-radius: 8px;
   border: 1px solid #949494;
   margin-bottom: 2.5rem;
-  transition: border 0.2s ease-in-out;
 }
 .form-input:hover, .form-input:focus {
   border-color: #242742;
@@ -289,6 +290,7 @@ button {
   border: 1px solid red;
   background-color: #ffe8e8;
   color: red;
+  transition: border 0.3s ease-in-out ease;
 }
 .form-button {
   font-weight: 700;

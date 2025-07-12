@@ -31,7 +31,7 @@
 	</head>
 	<body>
 		<div class="page">
-			<div class="card">
+			<div id="card" class="card">
 				<picture>
 					<source
 						srcset="./src/assets/images/illustration-sign-up-mobile.svg"
@@ -61,7 +61,7 @@
 						</li>
 						<li class="card__content-item">And much more!</li>
 					</ul>
-					<div class="form">
+					<form class="form" id="form">
 						<label class="form-label" for="email">Email address</label>
 						<input
 							class="form-input"
@@ -71,11 +71,11 @@
 							placeholder="email@company.com"
 							autocomplete="email"
 						/>
-						<p class="form-label-error">Valid email required</p>
+						<p id="textError" class="form-label-error">Valid email required</p>
 						<button type="submit" class="form-button" id="linkBtn">
 							Subscribe to monthly newsletter
 						</button>
-					</div>
+					</form>
 				</div>
 				<!-- <picture>
 					<source
@@ -89,7 +89,7 @@
 					/>
 				</picture> -->
 			</div>
-			<div class="card-success">
+			<div id="cardSuccess" class="card-success">
 				<div class="card-success__content">
 					<img
 						src="./src/assets/images/icon-list.svg"
@@ -109,9 +109,12 @@
 						Please open it and click the button inside to confirm your
 						subscription.
 					</p>
-					<button class="card-success__content-button">Dismiss message</button>
+					<button id="closeBtn" class="card-success__content-button">
+						Dismiss message
+					</button>
 				</div>
 			</div>
 		</div>
+		<script src="./src/js/main.js"></script>
 	</body>
 </html>
