@@ -1,1 +1,28 @@
 @use './function' as f;
+@use '../var';
+@use '../helpers/media' as *;
+
+@mixin button {
+	font-weight: var.$font-weight-bold;
+	color: var.$color-white;
+	background-color: var.$color-blue-800;
+	border-radius: var.$border-radius-md;
+	padding: f.rem(20);
+	transition: background-color var.$transition-normal,
+		transform var.$transition-normal;
+
+	@include laptop-above {
+		&:hover {
+			background-color: var.$color-red;
+			box-shadow: 0 12px 40px rgb(255, 98, 87, 0.5);
+		}
+	}
+
+	@include mobile {
+		&:active {
+			background-color: var.$color-red;
+			box-shadow: 0 12px 40px rgb(255, 98, 87, 0.5);
+			transform: scale(0.99);
+		}
+	}
+}

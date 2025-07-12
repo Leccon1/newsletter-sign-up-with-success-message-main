@@ -140,6 +140,10 @@ button {
   border: none;
 }
 
+.title {
+  font-size: clamp(3.8rem, 33.7943925234px + 1.1214953271vw, 5.6rem);
+}
+
 .card {
   position: relative;
   width: 925px;

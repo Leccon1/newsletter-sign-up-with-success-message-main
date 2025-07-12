@@ -1,1 +1,9 @@
 @use './helpers/' as *;
+@use './helpers/function' as f;
+
+.title {
+	font-size: f.fluid(38, 56);
+}
+
+.button {
+}
