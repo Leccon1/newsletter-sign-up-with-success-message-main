@@ -11,7 +11,7 @@
 	transition: background-color var.$transition-normal,
 		transform var.$transition-normal;
 
-	@include laptop-above {
+	@include mobile-above {
 		&:hover {
 			background-color: var.$color-red;
 			box-shadow: 0 12px 40px rgb(255, 98, 87, 0.5);
