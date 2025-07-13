@@ -11,6 +11,10 @@
 	border-radius: 30px;
 	font-size: f.fluid(14, 16);
 
+	@include mobile {
+		margin-top: 210px;
+	}
+
 	&__content {
 		&-img {
 			transform: scale(2);

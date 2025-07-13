@@ -298,7 +298,7 @@ button {
   background-color: #242742;
   border-radius: 8px;
   padding: 2rem;
-  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 @media (width > 767.98px) {
   .form-button:hover {
@@ -322,6 +322,11 @@ button {
   border-radius: 30px;
   font-size: clamp(1.4rem, 13.5327102804px + 0.1246105919vw, 1.6rem);
 }
+@media (width <= 767.98px) {
+  .card-success {
+    margin-top: 210px;
+  }
+}
 .card-success__content-img {
   transform: scale(2);
   margin: 1rem 0 3rem 1rem;
@@ -338,7 +343,7 @@ button {
   background-color: #242742;
   border-radius: 8px;
   padding: 2rem;
-  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out, transform 0.3s ease-in-out;
   width: 100%;
   margin-top: 4rem;
 }

@@ -8,8 +8,7 @@
 	background-color: var.$color-blue-800;
 	border-radius: var.$border-radius-md;
 	padding: f.rem(20);
-	transition: background-color var.$transition-normal,
-		transform var.$transition-normal;
+	transition: all var.$transition-normal, transform var.$transition-normal;
 
 	@include mobile-above {
 		&:hover {
