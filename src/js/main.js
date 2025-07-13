@@ -13,7 +13,7 @@ form.addEventListener('submit', function (e) {
 	const email = userInput.value.trim()
 	const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 
-	if (!isValid && checkError === false) {
+	if (!isValid && !email.includes('.com') && checkError === false) {
 		userInput.classList.add('error')
 		errorParagraph.style.display = 'block'
 		errorParagraph.style.opacity = '1'

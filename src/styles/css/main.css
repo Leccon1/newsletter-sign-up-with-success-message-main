@@ -147,7 +147,6 @@ button {
 .card {
   position: relative;
   width: 925px;
-  height: 640px;
   display: flex;
   flex-direction: row-reverse;
   background-color: #ffffff;
